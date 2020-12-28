@@ -17,8 +17,9 @@ class FullStarships extends Component{
 
     async componentDidMount() {
         let {match:{params: {name}}} = this.props;
-        let ship = await this.StarWarsService.getAllStarShips(name);
+        let ship = await this.StarWarsService.getStarShips(name);
         this.setState({ship});
+        console.log(ship);
     }
 
     render() {
@@ -34,9 +35,9 @@ class FullStarships extends Component{
             <div className="card">
                 {ship && (<div><img className="card-img-top" src="https://www.denofgeek.com/wp-content/uploads/2016/01/millennium-falcon.jpg"/>
                     <div className="card-body">
-                        <h4 className="card-title">{ship.name}</h4>
+                        <h4 className="card-title">{name}</h4>
                         <p className="card-text">
-                            {ship.model} -{ship.manufacturer}-{ship.cost_in_credits} -{ship.max_atmosphering_speed} -{ship.starship_class}
+                            {ship.model}
                         </p>
                     </div>
                 </div>

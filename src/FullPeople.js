@@ -17,7 +17,7 @@ class FullPeople extends Component{
 
     async componentDidMount() {
         let {match:{params: {name}}} = this.props;
-        let actor = await this.StarWarsService.getAllPeople(name);
+        let actor = await this.StarWarsService.getPeople(name);
         this.setState({actor});
     }
 
@@ -34,7 +34,7 @@ class FullPeople extends Component{
             <div className="card">
                 {actor && (<div><img className="card-img-top" src="https://www.bloomberg.com/graphics/2015-star-wars-the-force-accounted/img/facebook.jpg"/>
                     <div className="card-body">
-                        <h4 className="card-title">{actor.name}</h4>
+                        <h4 className="card-title">{name}</h4>
                         <p className="card-text">
                             {actor.gender} -{actor.eye_color}-{actor.skin_color}
                         </p>

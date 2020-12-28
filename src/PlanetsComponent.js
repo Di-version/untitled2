@@ -17,7 +17,7 @@ class PlanetsComponent extends Component {
     StarWarsService = new StarWarsService();
     state = {planet: []};
     async componentDidMount() {
-        let value = await this.StarWarsService.getPlanets();
+        let value = await this.StarWarsService.getAllPlanets();
         this.setState({planet: value.results});
 
 
